@@ -175,6 +175,9 @@ function builtinParameters(tool: ConnectorTool) {
   return undefined;
 }
 
+/** Convert one JSON Schema tool input into the Pi parameters the model is shown. Combinators and
+ * shapes TypeBox cannot express pass through via `Type.Unsafe`, so the original schema stays
+ * authoritative for connector-side validation. */
 export function jsonSchemaParameters(
   schema: Record<string, unknown>,
   options: FieldOptions = {},
